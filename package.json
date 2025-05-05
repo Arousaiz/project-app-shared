@@ -1,11 +1,12 @@
 {
   "name": "@arousaiz/project-app-shared",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.ts",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc && npm run package",
-    "package": "@powershell copy package.json dist/ && cd dist && npm pack"
+    "package": "@powershell copy package.json dist/ && cd dist && npm pack",
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "author": "arousaiz",
   "license": "ISC",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "rimraf": "^6.0.1",
+    "standard-version": "^9.5.0",
     "typescript": "^5.8.3"
   },
   "description": "test package"
