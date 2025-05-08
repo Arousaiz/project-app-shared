@@ -8,7 +8,7 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 import { DeliveryDetails, OrderItem, Restaurant, User } from './';
-import { OrderStatus, PaymentMethod } from 'src/enums';
+import { OrderStatus, PaymentMethod } from '../enums';
 
 @Entity('Order')
 export class Order {

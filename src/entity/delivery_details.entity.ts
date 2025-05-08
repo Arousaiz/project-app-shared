@@ -6,7 +6,7 @@ import {
   OneToOne,
 } from 'typeorm';
 import { Address, Order } from './';
-import { DeliveryStatus } from 'src/enums';
+import { DeliveryStatus } from '../enums';
 
 @Entity('delivery_details')
 export class DeliveryDetails {
@@ -19,7 +19,7 @@ export class DeliveryDetails {
   })
   deliveryStatus: DeliveryStatus;
 
-  @Column({ type: 'datetime', nullable: true })
+  @Column({ type: 'timestamptz', nullable: true })
   deliveryTime: Date;
 
   @ManyToOne(() => Address, (address) => address.deliveryDetails, {
